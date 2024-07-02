@@ -1,0 +1,5 @@
+C:\TaeMicros\SPI\testing_spi\CMSIS/core_cm4.h:1809:22:__NVIC_SetPriority	16	static
+C:\TaeMicros\SPI\testing_spi\CMSIS/core_cm4.h:2017:26:SysTick_Config	16	static
+../source/SPI.c:30:6:SPI_Init	48	static
+../source/SPI.c:64:6:SPI_SendData	32	static
+../source/SPI.c:84:6:SPI_Deinit	8	static
