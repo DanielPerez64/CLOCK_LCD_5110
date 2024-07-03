@@ -6,6 +6,7 @@
 #include "board.h"
 #include "PIT.h"
 #include "CLOCK.h"
+#include "NVIC.h"
 
 //uint8_t masterTxData[SPI_TRANSFER_SIZE] = {0U};
 volatile uint32_t g_systickCounter = 20U;
@@ -32,66 +33,51 @@ void SysTick_Handler(void)
 
 int main(void)
 {
+	uint32_t clock_pit = 0;
+	clock clock;
+	uint8_t vector[9];
+
     SPI_Init();
     LCD_begin();
-    setContrast(0x35);
 
+
+    setContrast(0x35);
     clearLCD();
-   //uint32_t i;
-   /*
-    for(uint8_t i = 0; i < 504 ; i++){
-    	draw(0x00,1);
-    }
-*/
-   // setCursor(0,0);
-   // uint8_t drawArray[5] = {0x7f, 0x08, 0x08, 0x08, 0x7f};
+
+	CLOCK_SetSimSafeDivs();
+	clock_pit = CLOCK_GetFreq(kCLOCK_BusClk);
+	PIT_init(clock_pit);
+
+	//interrupts
+	NVIC_set_basepri_threshold(PRIORITY_10);
+	NVIC_enable_interrupt_and_priotity(PIT_CH0_IRQ, PRIORITY_6);
+	NVIC_global_enable_interrupts;
+
+
     uint8_t drawH[5] = {0x7f, 0x08, 0x08, 0x08, 0x7f}; // 'H'
     uint8_t drawO[5] = {0x3e, 0x41, 0x41, 0x41, 0x3e}; // 'O'
     uint8_t drawL[5] = {0x7f, 0x40, 0x40, 0x40, 0x40}; // 'L'
     uint8_t drawA[5] = {0x7e, 0x11, 0x11, 0x11, 0x7e}; // 'A'
+
     setCursor(32,2);
-   // draw(drawArray,5);
-    /*
-    draw(drawH,5);
-    draw(drawO,5);
-    draw(drawL,5);
-    draw(drawA,5);
-*/
-
-    clock miReloj = {12, 34, 56};
-    uint8_t vector[9]; // 8 caracteres + null-terminator
-    clock_to_vector(&miReloj, vector);
-
-    draw(vector,9);
+    set_clock(&clock, 23, 58, 00); //init clock
 
     while (1)
     {
-    	/*
-        clock miReloj = {12, 34, 56};
-        char vector[9]; // 8 caracteres + null-terminator
 
-        clock_to_vector(&miReloj, vector);
-        printf("Vector: %s\n", vector); // Imprime el vector formateado
-        */
+    	if (true == PIT_get_irq_status(PIT_Ch0)){
+    		clock_increment(&clock);
+    		clock_to_vector(&clock, vector);
+    		printf("%s\n", vector);
 
-    	//draw(drawArray,5);
-    	//draw(drawArray,5);
-    	// draw(masterTxData,SPI_TRANSFER_SIZE);
-    //	SPI_SendData(masterTxData,SPI_TRANSFER_SIZE);
-/*
-        if (SysTick_Config(SystemCoreClock / 1000U))
-        {
-            while (1)
-            {
-            }
-        }
+    		setCursor(32,2);
+            draw(drawH,5);
+            draw(drawO,5);
+            draw(drawL,5);
+            draw(drawA,5);
 
-        g_systickCounter = 20U;
-        while (g_systickCounter != 0U)
-        {
-        }
-
-*/
+    		PIT_clear_irq_status(PIT_Ch0);
+    	}
 
     }
 }

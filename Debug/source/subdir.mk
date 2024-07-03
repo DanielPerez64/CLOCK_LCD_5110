@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../source/CLOCK.c \
+../source/NVIC.c \
 ../source/PIT.c \
 ../source/SPI.c \
 ../source/lcd_driver.c \
@@ -13,6 +14,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./source/CLOCK.d \
+./source/NVIC.d \
 ./source/PIT.d \
 ./source/SPI.d \
 ./source/lcd_driver.d \
@@ -21,6 +23,7 @@ C_DEPS += \
 
 OBJS += \
 ./source/CLOCK.o \
+./source/NVIC.o \
 ./source/PIT.o \
 ./source/SPI.o \
 ./source/lcd_driver.o \
@@ -40,7 +43,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/CLOCK.d ./source/CLOCK.o ./source/PIT.d ./source/PIT.o ./source/SPI.d ./source/SPI.o ./source/lcd_driver.d ./source/lcd_driver.o ./source/main.d ./source/main.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o
+	-$(RM) ./source/CLOCK.d ./source/CLOCK.o ./source/NVIC.d ./source/NVIC.o ./source/PIT.d ./source/PIT.o ./source/SPI.d ./source/SPI.o ./source/lcd_driver.d ./source/lcd_driver.o ./source/main.d ./source/main.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o
 
 .PHONY: clean-source
 

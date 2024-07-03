@@ -28,7 +28,6 @@ void clock_update(clock* clock) {
 }
 
 void clock_to_vector(clock* reloj, uint8_t* vector) {
-    // Formatear la hora, minutos y segundos en dos dígitos
     vector[0] = '0' + reloj->hora / 10;
     vector[1] = '0' + reloj->hora % 10;
     vector[2] = ':';
@@ -37,7 +36,7 @@ void clock_to_vector(clock* reloj, uint8_t* vector) {
     vector[5] = ':';
     vector[6] = '0' + reloj->segundo / 10;
     vector[7] = '0' + reloj->segundo % 10;
-    vector[8] = '\0'; // Null-terminator para el string
+    vector[8] = '\0';
 }
 
 void set_clock(clock* clock, uint8_t hora, uint8_t minuto, uint8_t segundo) {

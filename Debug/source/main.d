@@ -21,7 +21,8 @@ source/main.o source/main.d: ../source/main.c ../source/SPI.h \
  C:\TaeMicros\SPI\testing_spi\board/clock_config.h \
  C:\TaeMicros\SPI\testing_spi\drivers/fsl_gpio.h \
  C:\TaeMicros\SPI\testing_spi\drivers/fsl_port.h ../source/PIT.h \
- ../source/CLOCK.h
+ ../source/CLOCK.h ../source/NVIC.h \
+ C:\TaeMicros\SPI\testing_spi\device/MK64F12.h
 ../source/SPI.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_dspi.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_common.h:
@@ -48,3 +49,5 @@ C:\TaeMicros\SPI\testing_spi\drivers/fsl_gpio.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_port.h:
 ../source/PIT.h:
 ../source/CLOCK.h:
+../source/NVIC.h:
+C:\TaeMicros\SPI\testing_spi\device/MK64F12.h:

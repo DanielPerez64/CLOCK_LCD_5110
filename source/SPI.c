@@ -72,13 +72,14 @@ void SPI_SendData(uint8_t *txData, uint32_t dataSize)
     masterXfer.configFlags = kDSPI_MasterCtar0 | SPI_PCS_FOR_TRANSFER | kDSPI_MasterPcsContinuous;
 
     DSPI_MasterTransferBlocking(SPI_BASEADDR, &masterXfer);
-
+/*
     if (SysTick_Config(SystemCoreClock / 1000U))
            {
                while (1)
                {
                }
            }
+  */
 }
 
 void SPI_Deinit(void)
