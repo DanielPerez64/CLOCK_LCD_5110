@@ -39,6 +39,7 @@ void clock_to_vector(clock* reloj, uint8_t* vector) {
     vector[8] = '\0';
 }
 
+
 void set_clock(clock* clock, uint8_t hora, uint8_t minuto, uint8_t segundo) {
 	clock->hora = hora;
 	clock->minuto = minuto;

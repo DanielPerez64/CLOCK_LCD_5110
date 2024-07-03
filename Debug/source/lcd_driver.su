@@ -1,9 +1,10 @@
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_clock.h:668:20:CLOCK_EnableClock	24	static
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_gpio.h:162:20:GPIO_PinWrite	24	static
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_port.h:374:20:PORT_SetPinMux	24	static
-../source/lcd_driver.c:13:9:LCD_begin	24	static
-../source/lcd_driver.c:62:6:setContrast	24	static
-../source/lcd_driver.c:90:9:draw	16	static
-../source/lcd_driver.c:98:9:setCursor	24	static
-../source/lcd_driver.c:131:12:LCD5110_make	16	static
-../source/lcd_driver.c:141:6:clearLCD	16	static
+../source/lcd_driver.c:16:9:LCD_begin	24	static
+../source/lcd_driver.c:63:6:setContrast	24	static
+../source/lcd_driver.c:71:9:draw	16	static
+../source/lcd_driver.c:79:9:setCursor	24	static
+../source/lcd_driver.c:97:12:LCD5110_make	16	static
+../source/lcd_driver.c:107:6:clearLCD	16	static
+../source/lcd_driver.c:120:6:print_clock_on_lcd	32	static

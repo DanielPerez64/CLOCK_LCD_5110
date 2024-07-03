@@ -1,4 +1,4 @@
 ../source/CLOCK.c:11:6:clock_increment	16	static
 ../source/CLOCK.c:16:6:clock_update	16	static
 ../source/CLOCK.c:30:6:clock_to_vector	16	static
-../source/CLOCK.c:42:6:set_clock	16	static
+../source/CLOCK.c:43:6:set_clock	16	static

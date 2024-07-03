@@ -13,7 +13,8 @@ source/lcd_driver.o source/lcd_driver.d: ../source/lcd_driver.c \
  C:\TaeMicros\SPI\testing_spi\drivers/fsl_clock.h \
  C:\TaeMicros\SPI\testing_spi\drivers/fsl_port.h \
  C:\TaeMicros\SPI\testing_spi\drivers/fsl_clock.h ../source/lcd_driver.h \
- ../source/SPI.h C:\TaeMicros\SPI\testing_spi\drivers/fsl_dspi.h
+ ../source/clock.h ../source/SPI.h \
+ C:\TaeMicros\SPI\testing_spi\drivers/fsl_dspi.h
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_gpio.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_common.h:
 C:\TaeMicros\SPI\testing_spi\device/fsl_device_registers.h:
@@ -29,5 +30,6 @@ C:\TaeMicros\SPI\testing_spi\drivers/fsl_clock.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_port.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_clock.h:
 ../source/lcd_driver.h:
+../source/clock.h:
 ../source/SPI.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_dspi.h:

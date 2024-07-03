@@ -11,7 +11,7 @@ source/main.o source/main.d: ../source/main.c ../source/SPI.h \
  C:\TaeMicros\SPI\testing_spi\device/MK64F12_features.h \
  C:\TaeMicros\SPI\testing_spi\drivers/fsl_common_arm.h \
  C:\TaeMicros\SPI\testing_spi\drivers/fsl_clock.h ../source/lcd_driver.h \
- C:\TaeMicros\SPI\testing_spi\board/clock_config.h \
+ ../source/clock.h C:\TaeMicros\SPI\testing_spi\board/clock_config.h \
  C:\TaeMicros\SPI\testing_spi\drivers/fsl_common.h \
  C:\TaeMicros\SPI\testing_spi\utilities/fsl_debug_console.h \
  C:\TaeMicros\SPI\testing_spi\component\serial_manager/fsl_component_serial_manager.h \
@@ -37,6 +37,7 @@ C:\TaeMicros\SPI\testing_spi\device/MK64F12_features.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_common_arm.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_clock.h:
 ../source/lcd_driver.h:
+../source/clock.h:
 C:\TaeMicros\SPI\testing_spi\board/clock_config.h:
 C:\TaeMicros\SPI\testing_spi\drivers/fsl_common.h:
 C:\TaeMicros\SPI\testing_spi\utilities/fsl_debug_console.h:
